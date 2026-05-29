@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Detective Game</title>
+
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+
+<!-- =========================
+     GAME NAVBAR
+========================= -->
+
+<nav class="game-navbar">
+
+    <!-- LEFT LOGO -->
+    <div class="game-logo">
+        ♻ Eco Detective
+    </div>
+
+    <!-- CENTER STUDENT INFO -->
+    <div class="student-info">
+        <h3>Inturi Dwarakeswar</h3>
+        <p>Student at KL University</p>
+        <span>Project For Social Internship</span>
+    </div>
+
+    <!-- RIGHT NAVIGATION -->
+    <ul class="game-nav-links">
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="info.html">Information</a></li>
+
+        <li><a href="quiz.html">Quiz</a></li>
+
+        <li><a href="game.html">Game</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- =========================
+    START SCREEN
+========================= -->
+
+
+
+<div class="start-screen" id="startScreen">
+
+    <div class="start-card">
+
+        <h1>🕵️ ECO DETECTIVE</h1>
+
+        <p>Sort the waste. Save the future.</p>
+
+        <button onclick="startGame()">
+            START INVESTIGATION
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =========================
+    TOP HUD
+========================= -->
+
+<div class="hud hidden" id="hud">
+
+    <div class="score-box">
+        SCORE:
+        <span id="score">0</span>
+    </div>
+
+</div>
+
+<!-- =========================
+    MAIN GAME
+========================= -->
+
+<div class="game-wrapper hidden" id="gameWrapper">
+
+    <!-- WASTE DISPLAY -->
+    <div class="waste-zone">
+
+        <div id="wasteItem" class="waste-item">
+            🍌
+        </div>
+
+    </div>
+
+    <!-- MESSAGE -->
+    <div id="message"></div>
+
+    <!-- BINS -->
+    <div class="bin-zone">
+
+        <div class="bin green" onclick="checkAnswer('wet')">
+
+            <div class="bin-icon">🟢</div>
+
+            <div class="bin-text">
+                WET WASTE
+            </div>
+
+        </div>
+
+        <div class="bin blue" onclick="checkAnswer('dry')">
+
+            <div class="bin-icon">🔵</div>
+
+            <div class="bin-text">
+                DRY WASTE
+            </div>
+
+        </div>
+
+        <div class="bin red" onclick="checkAnswer('sanitary')">
+
+            <div class="bin-icon">🔴</div>
+
+            <div class="bin-text">
+                SANITARY
+            </div>
+
+        </div>
+
+        <div class="bin black" onclick="checkAnswer('ewaste')">
+
+            <div class="bin-icon">⚫</div>
+
+            <div class="bin-text">
+                E-WASTE
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>

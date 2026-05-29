@@ -1,1 +1,1 @@
-# waste-management-awareness
+# waste-detective-game

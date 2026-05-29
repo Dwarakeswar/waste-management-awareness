@@ -1,0 +1,539 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+
+    /* SCI-FI BACKGROUND */
+    background:
+        radial-gradient(circle at top left, rgba(0,255,255,0.15), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(140,0,255,0.18), transparent 35%),
+        linear-gradient(135deg, #02040a, #050816, #000000);
+
+    color: white;
+}
+
+/* GRID EFFECT */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
+
+    background-size: 60px 60px;
+
+    pointer-events: none;
+
+    opacity: 0.3;
+}
+
+/* =========================
+   START SCREEN
+========================= */
+
+.start-screen {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+}
+
+.start-card {
+    padding: 45px;
+    width: 420px;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    background: rgba(255,255,255,0.06);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 0 25px rgba(0,255,255,0.15),
+        0 0 60px rgba(140,0,255,0.15);
+
+    animation: fadeIn 1s ease;
+}
+
+.start-card h1 {
+    font-size: 42px;
+
+    color: #7df9ff;
+
+    text-shadow:
+        0 0 10px #00eaff,
+        0 0 25px #0066ff;
+
+    margin-bottom: 15px;
+}
+
+.start-card p {
+    color: rgba(255,255,255,0.75);
+
+    font-size: 17px;
+
+    margin-bottom: 28px;
+}
+
+/* BUTTON */
+
+.start-card button {
+    padding: 14px 30px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(90deg, #00eaff, #7d00ff);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 20px rgba(0,234,255,0.35);
+}
+
+.start-card button:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 35px rgba(125,0,255,0.55);
+}
+
+/* =========================
+   HUD
+========================= */
+
+.hud {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+}
+
+.score-box {
+    padding: 14px 28px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.06);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    color: #7df9ff;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 15px rgba(0,255,255,0.18);
+}
+
+/* =========================
+   GAME WRAPPER
+========================= */
+
+.game-wrapper {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+}
+
+/* =========================
+   WASTE ZONE
+========================= */
+
+.waste-zone {
+    margin-bottom: 40px;
+}
+
+/* BIG WASTE EMOJI */
+
+.waste-item {
+    font-size: 170px;
+
+    filter:
+        drop-shadow(0 0 20px rgba(255,255,255,0.2))
+        drop-shadow(0 0 40px rgba(0,255,255,0.25));
+
+    animation: floatWaste 2.5s ease-in-out infinite;
+}
+
+/* FLOATING EFFECT */
+
+@keyframes floatWaste {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+#message {
+    min-height: 40px;
+
+    margin-bottom: 30px;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    color: #7df9ff;
+
+    text-shadow:
+        0 0 10px rgba(0,255,255,0.6);
+}
+
+/* =========================
+   BIN ZONE
+========================= */
+
+.bin-zone {
+    display: flex;
+
+    gap: 28px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+/* =========================
+   SCI-FI BINS
+========================= */
+
+.bin {
+    width: 180px;
+    height: 220px;
+
+    border-radius: 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(15px);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* GLOW LINE */
+
+.bin::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+    );
+
+    transition: 0.5s;
+}
+
+.bin:hover::before {
+    left: 100%;
+}
+
+/* HOVER */
+
+.bin:hover {
+    transform: translateY(-10px) scale(1.04);
+}
+
+/* BIN ICON */
+
+.bin-icon {
+    font-size: 70px;
+
+    margin-bottom: 16px;
+}
+
+/* BIN TEXT */
+
+.bin-text {
+    font-size: 20px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+/* COLORS */
+
+.green {
+    background:
+        linear-gradient(145deg, rgba(46,204,113,0.35), rgba(20,90,50,0.65));
+
+    box-shadow:
+        0 0 20px rgba(46,204,113,0.35);
+}
+
+.blue {
+    background:
+        linear-gradient(145deg, rgba(52,152,219,0.35), rgba(27,79,114,0.65));
+
+    box-shadow:
+        0 0 20px rgba(52,152,219,0.35);
+}
+
+.red {
+    background:
+        linear-gradient(145deg, rgba(231,76,60,0.35), rgba(100,30,22,0.65));
+
+    box-shadow:
+        0 0 20px rgba(231,76,60,0.35);
+}
+
+.black {
+    background:
+        linear-gradient(145deg, rgba(80,80,80,0.4), rgba(0,0,0,0.85));
+
+    box-shadow:
+        0 0 20px rgba(180,180,180,0.15);
+}
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none;
+}
+
+/* =========================
+   FADE IN
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =========================
+   GAME NAVBAR
+========================= */
+
+.game-navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 5%;
+
+    background:rgba(10,15,25,0.78);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(0,255,255,0.12);
+
+    z-index:9999;
+}
+
+
+
+/* =========================
+   LOGO
+========================= */
+
+.game-logo{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    color:#7df9ff;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 0 10px rgba(0,255,255,0.5);
+}
+
+
+
+/* =========================
+   CENTER INFO
+========================= */
+
+.student-info{
+
+    text-align:center;
+
+    color:white;
+}
+
+.student-info h3{
+
+    font-size:1rem;
+
+    margin-bottom:2px;
+
+    color:#7df9ff;
+
+    text-shadow:
+        0 0 12px rgba(0,255,255,0.5);
+}
+
+.student-info p{
+
+    font-size:0.8rem;
+
+    opacity:0.85;
+
+    margin-bottom:2px;
+}
+
+.student-info span{
+
+    font-size:0.7rem;
+
+    color:#00ffaa;
+
+    letter-spacing:1px;
+}
+
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.game-nav-links{
+
+    display:flex;
+
+    gap:28px;
+
+    list-style:none;
+}
+
+.game-nav-links li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:0.3s;
+}
+
+
+
+/* HOVER */
+
+.game-nav-links li a:hover{
+
+    color:#00ffaa;
+
+    text-shadow:
+        0 0 10px rgba(0,255,170,0.5);
+}
+
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+    .game-navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    .game-nav-links{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+}

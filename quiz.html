@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz & Mystery Challenges</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+    <!-- NAVBAR -->
+
+    <nav class="quiz-navbar">
+
+        <div class="quiz-logo">
+            🧠 Eco Mystery Hub
+        </div>
+
+        <div class="student-info">
+        <h3>Inturi Dwarakeswar</h3>
+        <p>Student at KL University</p>
+        <span>Project For Social Internship</span>
+    </div>
+
+        <ul class="quiz-nav-links">
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="info.html">Information</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="game.html">Game</a></li>
+
+        </ul>
+
+    </nav>
+
+
+
+
+
+    <!-- HERO SECTION -->
+
+    <section class="quiz-hero">
+
+        <div class="quiz-overlay"></div>
+
+        <img src="images/mystery-quiz.jpg" alt="Quiz Hero">
+
+        <div class="quiz-hero-content">
+
+            <h1>
+                Quiz & Mystery Challenges
+            </h1>
+
+            <p>
+                Test your environmental knowledge through interactive myth-or-fact
+                challenges and discover surprising truths about waste management,
+                recycling, pollution, and environmental protection.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- QUIZ SECTION -->
+
+    <section class="myth-section">
+
+        <h2>🤯 Myth Or Fact Challenge</h2>
+
+        <p class="quiz-intro">
+            Start the environmental mystery quiz and discover the truth about
+            waste pollution, recycling, and environmental protection.
+        </p>
+
+
+
+        <!-- START SCREEN -->
+
+        <div class="start-screen" id="startScreen">
+
+            <button class="start-btn" onclick="startQuiz()">
+                Start Quiz
+            </button>
+
+        </div>
+
+
+
+        <!-- QUIZ CONTAINER -->
+
+        <div class="quiz-container hidden" id="quizContainer">
+
+            <div class="question-box">
+
+                <h3 id="questionText">
+                    Question appears here
+                </h3>
+
+                <div class="quiz-buttons">
+
+                    <button onclick="checkAnswer('myth')">
+                        MYTH
+                    </button>
+
+                    <button onclick="checkAnswer('fact')">
+                        FACT
+                    </button>
+
+                </div>
+
+                <p class="answer-text" id="answerText"></p>
+
+                <button class="next-btn hidden" id="nextBtn" onclick="nextQuestion()">
+                    Next Question →
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESULT SCREEN -->
+
+        <div class="result-screen hidden" id="resultScreen">
+
+            <h2>
+                🎉 Quiz Completed
+            </h2>
+
+            <p id="scoreText">
+                Your Score: 0 / 10
+            </p>
+
+            <p class="result-message">
+                Every correct answer increases environmental awareness.
+                Small knowledge creates big environmental change.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- FINAL SECTION -->
+
+    <section class="quiz-ending">
+
+        <h2>
+            🌍 Every Small Action Matters
+        </h2>
+
+        <p>
+            Awareness is the first step toward environmental protection.
+            Responsible waste management, recycling, and sustainable habits
+            can help create a cleaner future for everyone.
+        </p>
+
+        <a href="game.html" class="game-btn">
+            Play Waste Sorting Game →
+        </a>
+
+    </section>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

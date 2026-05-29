@@ -1,0 +1,1137 @@
+/* ========================= */
+/* GLOBAL RESET */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Smooth scroll for Start Investigation button */
+html{
+    scroll-behavior:smooth;
+}
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#eef7ee;
+    color:#1d2b1f;
+    overflow-x:hidden;
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* HERO IMAGE */
+
+.hero-image{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* OVERLAY (LIGHT ECO DARKENING FOR TEXT READABILITY) */
+
+.hero-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        to right,
+        rgba(16,40,20,0.65),
+        rgba(16,40,20,0.25)
+    );
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+nav{
+    position:relative;
+    z-index:100;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 8%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+}
+
+/* LOGO */
+
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
+    color:#b8ff66;
+}
+
+/* NAV LINKS */
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#b8ff66;
+}
+
+/* STUDENT INFO */
+
+.student-info{
+    text-align:right;
+}
+
+.student-info h3{
+    color:#b8ff66;
+    font-size:1rem;
+}
+
+.student-info p,
+.student-info span{
+    color:#eef7ee;
+    font-size:0.8rem;
+}
+
+/* ========================= */
+/* HERO CONTENT */
+/* ========================= */
+
+.hero-content{
+    position:relative;
+    z-index:10;
+    height:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:0 8%;
+    max-width:850px;
+}
+
+/* TITLE */
+
+.hero-content h1{
+    font-size:4.8rem;
+    line-height:1.1;
+    margin-bottom:25px;
+    color:white;
+}
+
+/* TEXT */
+
+.hero-content p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#f1fff1;
+    max-width:700px;
+    margin-bottom:35px;
+}
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+}
+
+.hero-buttons button{
+    padding:15px 30px;
+    border:none;
+    border-radius:12px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* PRIMARY BUTTON */
+
+.primary-btn{
+    background:#8cff7d;
+    color:#102814;
+}
+
+/* BUTTON HOVER */
+
+.hero-buttons button:hover{
+    transform:translateY(-5px);
+}
+
+/* ========================= */
+/* CARDS SECTION */
+/* ========================= */
+
+.cards-section{
+    background:#f4fbf4;
+    padding:90px 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* CARD HOVER */
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 35px rgba(0,0,0,0.12);
+}
+
+/* CARD IMAGE */
+
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+/* CARD CONTENT */
+
+.card-content{
+    padding:28px;
+}
+
+/* CARD TITLE */
+
+.card-content h2{
+    margin-bottom:15px;
+    color:#2d7d46;
+}
+
+/* CARD TEXT */
+
+.card-content p{
+    line-height:1.8;
+    color:#4f5b4f;
+    margin-bottom:22px;
+}
+
+/* CARD BUTTON */
+
+.card-content button{
+    padding:12px 22px;
+    border:none;
+    border-radius:10px;
+    background:#8cff7d;
+    color:#102814;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* CARD BUTTON HOVER */
+
+.card-content button:hover{
+    transform:scale(1.05);
+}
+
+/* ========================= */
+/* RESPONSIVE DESIGN */
+/* ========================= */
+
+@media(max-width:950px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero-content h1{
+        font-size:2.3rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero-buttons button{
+        width:100%;
+    }
+}
+
+/* ===================================== */
+/* GLOBAL STYLES */
+/* ===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(
+        to bottom,
+        #eef2f3,
+        #d9e2e6,
+        #cfd8dc
+    );
+    color:#1f2933;
+    overflow-x:hidden;
+}
+
+
+
+/* ===================================== */
+/* NAVBAR */
+/* ===================================== */
+
+.info-navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(255,255,255,0.88);
+    backdrop-filter:blur(12px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.info-logo{
+    font-size:1.5rem;
+    font-weight:700;
+    color:#74c69d;
+    letter-spacing:1px;
+}
+
+.info-nav-links{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+.info-nav-links li a{
+    text-decoration:none;
+    color:#344e41;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.info-nav-links li a:hover{
+    color:#52b788;
+}
+
+
+
+/* ===================================== */
+/* HERO SECTION */
+/* ===================================== */
+
+.info-hero{
+    position:relative;
+    width:100%;
+    height:90vh;
+    overflow:hidden;
+}
+
+.info-hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.info-hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to right,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.35)
+    );
+}
+
+.info-hero-content{
+    position:absolute;
+    top:50%;
+    left:8%;
+    transform:translateY(-50%);
+    max-width:750px;
+    color:white;
+}
+
+.info-hero-content h1{
+    font-size:4rem;
+    line-height:1.2;
+    margin-bottom:30px;
+    color:#d8f3dc;
+}
+
+.info-hero-content p{
+    font-size:1.08rem;
+    line-height:2;
+    margin-bottom:20px;
+}
+
+
+
+/* ===================================== */
+/* ARTICLE SECTIONS */
+/* ===================================== */
+
+.article-section{
+    width:100%;
+    display:flex;
+    align-items:flex-start;
+    gap:60px;
+    padding:90px 8%;
+    border-bottom:1px solid rgba(0,0,0,0.08);
+    background:rgba(255,255,255,0.45);
+    backdrop-filter:blur(10px);
+}
+
+.reverse-layout{
+    flex-direction:row-reverse;
+}
+
+
+
+/* ===================================== */
+/* ARTICLE IMAGES */
+/* ===================================== */
+
+.article-image{
+    flex:1;
+    position:sticky;
+    top:120px;
+}
+
+.article-image img{
+    width:100%;
+    max-width:500px;
+    border-radius:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    border:3px solid rgba(255,255,255,0.5);
+}
+
+
+
+/* ===================================== */
+/* ARTICLE CONTENT */
+/* ===================================== */
+
+.article-content{
+    flex:1.5;
+}
+
+.article-content h2{
+    font-size:2.5rem;
+    color:#52b788;
+    margin-bottom:25px;
+    line-height:1.3;
+}
+
+.article-content h3{
+    margin-top:30px;
+    margin-bottom:15px;
+    color:#2d6a4f;
+    font-size:1.3rem;
+}
+
+.article-content p{
+    font-size:1.05rem;
+    line-height:2;
+    color:#3a4a52;
+    margin-bottom:22px;
+    text-align:justify;
+}
+
+
+
+/* ===================================== */
+/* FUTURE SECTIONS */
+/* ===================================== */
+
+.future-section{
+    position:relative;
+    width:100%;
+    height:75vh;
+    overflow:hidden;
+}
+
+.future-section img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.future-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+}
+
+.future-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:75%;
+    text-align:center;
+    color:white;
+}
+
+.future-content h2{
+    font-size:3rem;
+    margin-bottom:25px;
+    color:#d8f3dc;
+}
+
+.future-content p{
+    font-size:1.15rem;
+    line-height:2;
+}
+
+
+
+/* ===================================== */
+/* SCROLLBAR */
+/* ===================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#dfe7ea;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#74c69d;
+    border-radius:10px;
+}
+
+
+
+/* ===================================== */
+/* RESPONSIVE DESIGN */
+/* ===================================== */
+
+@media(max-width:1100px){
+
+    .article-section{
+        flex-direction:column;
+    }
+
+    .reverse-layout{
+        flex-direction:column;
+    }
+
+    .article-image{
+        position:relative;
+        top:0;
+        width:100%;
+        display:flex;
+        justify-content:center;
+    }
+
+    .article-image img{
+        max-width:100%;
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+    .info-navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .info-nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .info-hero-content{
+        left:6%;
+        right:6%;
+    }
+
+    .info-hero-content h1{
+        font-size:2.7rem;
+    }
+
+    .article-content h2{
+        font-size:2rem;
+    }
+
+    .future-content h2{
+        font-size:2.2rem;
+    }
+
+}
+
+
+
+@media(max-width:500px){
+
+    .info-hero{
+        height:100vh;
+    }
+
+    .info-hero-content h1{
+        font-size:2.1rem;
+    }
+
+    .info-hero-content p{
+        font-size:0.95rem;
+        line-height:1.8;
+    }
+
+    .article-content p{
+        font-size:0.96rem;
+        line-height:1.9;
+    }
+
+    .future-content{
+        width:90%;
+    }
+
+}
+
+/* ===================================== */
+/* QUIZ PAGE */
+/* ===================================== */
+
+/* ===================================== */
+/* QUIZ PAGE */
+/* ===================================== */
+
+.quiz-navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(20,20,20,0.92);
+    backdrop-filter:blur(12px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.quiz-logo{
+    font-size:1.5rem;
+    font-weight:700;
+    color:#7ee787;
+}
+
+.quiz-nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.quiz-nav-links li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+    font-weight:500;
+}
+
+.quiz-nav-links li a:hover{
+    color:#7ee787;
+}
+
+
+
+/* ===================================== */
+/* HERO SECTION */
+/* ===================================== */
+
+.quiz-hero{
+    position:relative;
+    width:100%;
+    height:80vh;
+    overflow:hidden;
+}
+
+.quiz-hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.quiz-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.68);
+}
+
+.quiz-hero-content{
+    position:absolute;
+    top:50%;
+    left:8%;
+    transform:translateY(-50%);
+    max-width:750px;
+    color:white;
+}
+
+.quiz-hero-content h1{
+    font-size:4rem;
+    margin-bottom:25px;
+    color:#7ee787;
+    line-height:1.2;
+}
+
+.quiz-hero-content p{
+    font-size:1.1rem;
+    line-height:2;
+    color:#d8d8d8;
+}
+
+
+
+/* ===================================== */
+/* QUIZ MAIN SECTION */
+/* ===================================== */
+
+.myth-section{
+    padding:100px 8%;
+    background:linear-gradient(
+        to bottom,
+        #1f1f1f,
+        #2d2d2d
+    );
+    color:white;
+    min-height:100vh;
+}
+
+.myth-section h2{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:25px;
+    color:#7ee787;
+}
+
+.quiz-intro{
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+    line-height:2;
+    color:#d0d0d0;
+    margin-bottom:60px;
+    font-size:1.05rem;
+}
+
+
+
+/* ===================================== */
+/* START BUTTON */
+/* ===================================== */
+
+.start-screen{
+    text-align:center;
+}
+
+.start-btn{
+    padding:18px 45px;
+    background:#7ee787;
+    color:black;
+    border:none;
+    border-radius:16px;
+    font-size:1.1rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.start-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(126,231,135,0.35);
+}
+
+
+
+/* ===================================== */
+/* QUIZ CONTAINER */
+/* ===================================== */
+
+.quiz-container{
+    max-width:900px;
+    margin:70px auto;
+}
+
+
+
+/* ===================================== */
+/* QUESTION BOX */
+/* ===================================== */
+
+.question-box{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(126,231,135,0.25);
+    border-radius:25px;
+    padding:55px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 35px rgba(0,0,0,0.25);
+}
+
+.question-box h3{
+    font-size:1.8rem;
+    line-height:1.8;
+    margin-bottom:40px;
+    color:white;
+}
+
+
+
+/* ===================================== */
+/* QUIZ BUTTONS */
+/* ===================================== */
+
+.quiz-buttons{
+    display:flex;
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.quiz-buttons button{
+    padding:15px 34px;
+    border:none;
+    border-radius:14px;
+    background:#353535;
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:1rem;
+}
+
+.quiz-buttons button:hover{
+    background:#7ee787;
+    color:black;
+    transform:translateY(-3px);
+}
+
+
+
+/* ===================================== */
+/* ANSWER TEXT */
+/* ===================================== */
+
+.answer-text{
+    margin-top:20px;
+    line-height:2;
+    font-size:1.05rem;
+    font-weight:500;
+}
+
+
+
+/* ===================================== */
+/* NEXT BUTTON */
+/* ===================================== */
+
+.next-btn{
+    margin-top:35px;
+    padding:15px 34px;
+    border:none;
+    border-radius:14px;
+    background:#7ee787;
+    color:black;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:1rem;
+}
+
+.next-btn:hover{
+    transform:translateY(-3px);
+}
+
+
+
+/* ===================================== */
+/* RESULT SCREEN */
+/* ===================================== */
+
+.result-screen{
+    text-align:center;
+    margin-top:70px;
+}
+
+.result-screen h2{
+    font-size:3rem;
+    color:#7ee787;
+    margin-bottom:30px;
+}
+
+#scoreText{
+    font-size:1.7rem;
+    margin-bottom:25px;
+    color:white;
+    font-weight:600;
+}
+
+.result-message{
+    max-width:750px;
+    margin:auto;
+    line-height:2;
+    color:#d0d0d0;
+}
+
+
+
+/* ===================================== */
+/* FINAL SECTION */
+/* ===================================== */
+
+.quiz-ending{
+    padding:100px 8%;
+    text-align:center;
+    background:linear-gradient(
+        to bottom,
+        #202020,
+        #111111
+    );
+    color:white;
+}
+
+.quiz-ending h2{
+    font-size:3rem;
+    margin-bottom:25px;
+    color:#7ee787;
+}
+
+.quiz-ending p{
+    max-width:850px;
+    margin:auto;
+    line-height:2;
+    margin-bottom:40px;
+    color:#d3d3d3;
+    font-size:1.05rem;
+}
+
+
+
+/* ===================================== */
+/* GAME BUTTON */
+/* ===================================== */
+
+.game-btn{
+    display:inline-block;
+    padding:17px 36px;
+    background:#7ee787;
+    color:black;
+    text-decoration:none;
+    border-radius:15px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.game-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 28px rgba(126,231,135,0.3);
+}
+
+
+
+/* ===================================== */
+/* HIDDEN */
+/* ===================================== */
+
+.hidden{
+    display:none;
+}
+
+
+
+/* ===================================== */
+/* RESPONSIVE DESIGN */
+/* ===================================== */
+
+@media(max-width:768px){
+
+    .quiz-navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .quiz-nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .quiz-hero-content{
+        left:6%;
+        right:6%;
+    }
+
+    .quiz-hero-content h1{
+        font-size:2.7rem;
+    }
+
+    .myth-section h2,
+    .quiz-ending h2,
+    .result-screen h2{
+        font-size:2.2rem;
+    }
+
+    .question-box{
+        padding:35px;
+    }
+
+    .question-box h3{
+        font-size:1.4rem;
+    }
+
+    .quiz-buttons{
+        flex-direction:column;
+    }
+
+}
+
+
+
+@media(max-width:500px){
+
+    .quiz-hero{
+        height:100vh;
+    }
+
+    .quiz-hero-content h1{
+        font-size:2.2rem;
+    }
+
+    .quiz-hero-content p{
+        font-size:0.95rem;
+    }
+
+    .question-box{
+        padding:28px;
+    }
+
+    .question-box h3{
+        font-size:1.2rem;
+    }
+
+}
+
+/* =========================
+   TOP CENTER PROJECT INFO
+========================= */
+
+/* =========================
+   STUDENT INFO IN NAVBAR
+========================= */
+
+.student-info{
+
+    text-align:center;
+
+    color:white;
+}
+
+.student-info h3{
+
+    font-size:1rem;
+
+    color:#7df9ff;
+
+    margin-bottom:2px;
+
+    text-shadow:
+        0 0 10px rgba(0,255,255,0.5);
+}
+
+.student-info p{
+
+    font-size:0.8rem;
+
+    opacity:0.9;
+
+    margin-bottom:2px;
+}
+
+.student-info span{
+
+    font-size:0.7rem;
+
+    color:#00ffaa;
+
+    letter-spacing:1px;
+}
+
+/* =========================
+   INFO PAGE SPECIAL COLORS
+========================= */
+
+.info-student-info h3{
+
+    color:#1b4332;
+
+    text-shadow:none;
+}
+
+.info-student-info p{
+
+    color:#2d6a4f;
+}
+
+.info-student-info span{
+
+    color:#40916c;
+}
